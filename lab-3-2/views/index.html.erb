@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+<h1>Todo</h1>
+
+<div class="square">
+
+<h2>Today</h2>
+<div class="list-container">
+  <form action="/update" method="post">
+    <button class="btn" type="submit" >Save</button>
+     
+    <ul class="list">
+      <% items.each do |item| %>
+         <%= erb :"_item.html", locals: {item: item} %>
+      <% end %>
+    </ul>  
+  </form>
+ </div>
+
+
+
+  <input class="textIn" type="text" placeholder="Add a card..">
+</div>
+
+
+<div class="square add-list" id="money">
+    <span class="toHide">Add</span>
+    <form class="newform hidden">
+      <input type="text" class="new-list-name">
+      <input type="submit" value="Save" class="save">
+      <span class="cancel">&times;</span>
+    </form>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
+
+
